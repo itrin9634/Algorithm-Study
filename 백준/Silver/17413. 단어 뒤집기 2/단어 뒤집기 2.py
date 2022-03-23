@@ -1,26 +1,20 @@
-s = input()
-result = ""
-tmp_stack = []
-tag = False
-for i in range(len(s)):
-    if s[i] == "<":
-        tag = True
-        while tmp_stack:
-            result += tmp_stack.pop()
-        result += s[i]
-    elif s[i] == " ":
-        while tmp_stack:
-            result += tmp_stack.pop()
-        result += s[i]
-    elif s[i] == ">":
-        result += s[i]
-        tag = False
-    elif tag:
-        result += s[i]
+import sys
+word = list(sys.stdin.readline().strip())
+i = 0 
+start = 0
+
+while i < len(word):
+    if word[i] == "<":
+        i += 1
+        while word[i] != ">":
+            i += 1
+    elif word[i].isalnum():
+        start = i
+        while i < len(word) and word[i].isalnum():
+            i += 1
+        tmp = word[start:i]
+        tmp.reverse()
+        word[start:i] = tmp
     else:
-        tmp_stack.append(s[i])
-
-while tmp_stack:
-    result += tmp_stack.pop()
-
-print(result)
+        i += 1
+print("".join(word))        
