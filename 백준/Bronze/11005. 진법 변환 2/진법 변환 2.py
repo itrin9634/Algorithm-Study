@@ -9,11 +9,8 @@ for i in range(36):
     else:
         d[i] = str(i)
 
-while n >= b:
-    mod = n % b
+while n != 0:
+    result += d[n % b]
     n //= b
-    result += d[mod]
 
-if n:
-    result += d[n]
 print(result[::-1])
