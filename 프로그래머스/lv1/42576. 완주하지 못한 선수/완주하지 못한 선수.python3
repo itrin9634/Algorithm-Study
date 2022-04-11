@@ -1,0 +1,11 @@
+def solution(participant, completion):
+    parDict = {}
+    answer = ''
+    for p in participant:
+        parDict[p] = parDict.get(p, 0) + 1
+    for c in completion:
+        parDict[c] -= 1
+    for key in participant:
+        if parDict[key] != 0:
+            answer = key
+    return answer
