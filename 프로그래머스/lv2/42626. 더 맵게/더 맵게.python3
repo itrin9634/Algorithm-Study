@@ -1,0 +1,20 @@
+import heapq
+
+def solution(scoville, K):
+    h = []
+    answer = 0
+    # heap에 우선 순위대로 넣기
+    for i in scoville:
+        heapq.heappush(h, i)
+    while h:
+        cur_k = heapq.heappop(h)
+        if cur_k >= K:
+            break
+        elif h:
+            cur_k2 = heapq.heappop(h)
+            cur_k += (cur_k2 * 2)
+            answer+=1
+            heapq.heappush(h, cur_k)
+        else:
+            return -1
+    return answer
