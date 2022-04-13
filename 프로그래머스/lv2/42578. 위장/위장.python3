@@ -1,0 +1,13 @@
+def solution(clothes):
+    answer = 0
+    hash = dict()
+    for n, k in clothes:
+        if k in hash:
+            hash[k] += 1
+        else:
+            hash[k] = 1
+    answer = 1        
+    for name, val in hash.items():
+        answer *= (val + 1)
+    answer -= 1    
+    return answer
