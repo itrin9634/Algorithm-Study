@@ -3,12 +3,13 @@ from collections import deque
 def solution(bridge_length, weight, truck_weights):
     answer = 0
     bridges = deque([0] * bridge_length)
-    
+    w = 0
     while bridges:
         answer += 1
-        bridges.popleft()
+        w -= bridges.popleft()
         if truck_weights:
-            if (sum(bridges) + truck_weights[0]) <= weight:
+            if (w + truck_weights[0]) <= weight:
+                w += truck_weights[0]
                 bridges.append(truck_weights.pop(0))
             else:
                 bridges.append(0)
