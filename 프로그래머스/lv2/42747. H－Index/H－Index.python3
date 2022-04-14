@@ -7,4 +7,4 @@ def solution(citations):
         cita, idx = citations[i]
         if idx >= cita:
             return idx
-    return len(citations)   
+    return len(citations)
