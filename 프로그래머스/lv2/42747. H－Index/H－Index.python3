@@ -1,0 +1,10 @@
+from collections import deque
+
+def solution(citations):
+    citations.sort(reverse = True)
+    citations = [(v, i) for i, v in enumerate(citations)]
+    for i in range(len(citations)):
+        cita, idx = citations[i]
+        if idx >= cita:
+            return idx
+    return len(citations)   
