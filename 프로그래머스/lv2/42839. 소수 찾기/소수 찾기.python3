@@ -1,0 +1,34 @@
+from itertools import permutations
+
+def solution(numbers):
+    answer = 0
+    nums = []
+    for s in numbers:
+        nums.append(s)
+    combs = [] #조합 담는 모음
+    for i in range(1, len(numbers) + 1):
+        comb = list(permutations(nums, i))
+        combs += comb
+    int_combs = []
+    for c in combs:
+        temp = ''
+        for l in range(len(c)):
+            temp += c[l]
+        int_combs.append(int(temp))
+    int_combs = list(set(int_combs))
+    
+    MAX = max(int_combs) + 1
+    print(MAX)
+    
+    erathoes = [True] * (MAX)
+    for i in range(2, int((MAX) ** 0.5) + 1):
+        n = 2
+        if erathoes[i]:
+            while i * n < MAX:
+                erathoes[i * n] = False
+                n += 1
+                
+    for i in int_combs:
+        if i >= 2 and erathoes[i]:
+            answer += 1
+    return answer
