@@ -1,0 +1,11 @@
+def lcm(x, y):
+    while y:
+        x, y = y, x % y
+    return x
+
+def gcd(x, y):
+    return x*y / lcm(x, y)
+
+def solution(n, m):
+    answer = [lcm(n,m), gcd(n,m)]
+    return answer
