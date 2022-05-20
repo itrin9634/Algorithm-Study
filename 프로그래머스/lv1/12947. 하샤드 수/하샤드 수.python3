@@ -1,0 +1,7 @@
+def solution(x):
+    answer = True
+    arr = list(map(int, list(str(x))))
+    total = sum(arr)
+    if (x % total != 0):
+        answer = False
+    return answer
