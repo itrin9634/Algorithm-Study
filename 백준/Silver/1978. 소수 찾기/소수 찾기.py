@@ -1,14 +1,18 @@
-n = int(input())
+MAX = 1000
+dp = [True] * (MAX +1)
+dp[0], dp[1] = False, False
+
+for i in range(2, MAX + 1):
+    j = 2
+    while i * j <= MAX:
+        dp[i * j] = False
+        j += 1
+
+t = int(input())
 arr = list(map(int, input().split()))
-tag = True
-count = 0
-for i in arr:
-    tag = True
-    if i == 1:
-        tag = False
-    for j in range(2, i):
-        if i % j == 0:
-            tag = False
-    if tag:
-        count += 1
-print(count)
+cnt = 0
+for i in range(t):
+    if dp[arr[i]]:
+        cnt += 1
+
+print(cnt)
