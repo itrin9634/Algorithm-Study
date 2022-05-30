@@ -1,0 +1,7 @@
+def solution(n):
+    answer = 0
+    st = str(n)
+    for s in st:
+        answer += int(s)
+
+    return answer
