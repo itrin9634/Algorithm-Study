@@ -1,24 +1,22 @@
 def solution(answers):
     answer = []
-    a = [1, 2, 3, 4, 5]
-    b = [2, 1, 2, 3, 2, 4, 2, 5]
-    c = [3, 3, 1, 1, 2, 2, 4, 4, 5, 5]
-    l_a, l_b, l_c = 0, 0, 0
-    
+    p1 = [1,2,3,4,5]
+    p2 = [2,1,2,3,2,4,2,5]
+    p3 = [3,3,1,1,2,2,4,4,5,5]
+    a1, a2, a3 = 0, 0, 0
     for i in range(len(answers)):
-        if answers[i % len(answers)] == a[i % len(a)]:
-            l_a += 1
-        if answers[i % len(answers)] == b[i % len(b)]:
-            l_b += 1
-        if answers[i % len(answers)] == c[i % len(c)]:
-            l_c += 1
-            
-    max_result = max(l_a, l_b, l_c)
-    if l_a == max_result:
+        if answers[i] == p1[i % len(p1)]:
+            a1 += 1
+        if answers[i] == p2[i % len(p2)]:
+            a2 += 1
+        if answers[i] == p3[i % len(p3)]:
+            a3 += 1
+    MAX = max(a1, a2, a3)
+    if MAX == a1:
         answer.append(1)
-    if l_b == max_result:
+    if MAX == a2:
         answer.append(2)
-    if l_c == max_result:
+    if MAX == a3:
         answer.append(3)
-    
+        
     return answer
