@@ -1,0 +1,14 @@
+def solution(n, lost, reserve):
+    answer = n
+    lost.sort()
+    reserve.sort()
+    new_lost = list(set(lost) - set(reserve))
+    new_reserve = list(set(reserve) - set(lost))
+    for l in new_lost:
+        if l-1 in new_reserve:
+            new_reserve.remove(l-1)
+        elif l+1 in new_reserve:
+            new_reserve.remove(l+1)
+        else:
+            answer -= 1
+    return answer
