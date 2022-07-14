@@ -1,10 +1,10 @@
 # [level 3] 자물쇠와 열쇠 - 60059 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/60059) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/60059) 
 
 ### 성능 요약
 
-메모리: 10.3 MB, 시간: 1.01 ms
+메모리: 10.3 MB, 시간: 0.32 ms
 
 ### 구분
 
@@ -59,10 +59,6 @@
 <p><img src="https://grepp-programmers.s3.amazonaws.com/files/production/469703690b/79f2f473-5d13-47b9-96e0-a10e17b7d49a.jpg" title="" alt="자물쇠.jpg"></p>
 
 <p>key를 시계 방향으로 90도 회전하고, 오른쪽으로 한 칸, 아래로 한 칸 이동하면 lock의 홈 부분을 정확히 모두 채울 수 있습니다.</p>
-
-<hr>
-
-<p><u>혼자 풀기가 막막하다면, 풀이 강의를 들어보세요</u> <a href="https://programmers.co.kr/learn/courses/10336?utm_source=programmers&amp;utm_medium=test_course10336&amp;utm_campaign=course_10336" target="_blank" rel="noopener">(클릭)</a></p>
 
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://programmers.co.kr/learn/challenges
