@@ -1,3 +1,5 @@
+import sys
+input = sys.stdin.readline
 l, c = map(int, input().split())
 alphas = input().split()
 alphas.sort()
