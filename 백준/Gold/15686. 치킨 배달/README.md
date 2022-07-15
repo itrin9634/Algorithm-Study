@@ -4,11 +4,11 @@
 
 ### 성능 요약
 
-메모리: 115448 KB, 시간: 160 ms
+메모리: 115428 KB, 시간: 152 ms
 
 ### 분류
 
-브루트포스 알고리즘(bruteforcing), 구현(implementation)
+백트래킹(backtracking), 브루트포스 알고리즘(bruteforcing), 구현(implementation)
 
 ### 문제 설명
 

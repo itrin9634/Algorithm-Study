@@ -1,24 +1,26 @@
 from itertools import combinations
 n, m = map(int, input().split())
-graph = [input().split() for _ in range(n)]
+board = [list(map(int, input().split())) for _ in range(n)]
 homes = []
 chickens = []
+MAX = 999999
+result = MAX
 for i in range(n):
     for j in range(n):
-        if graph[i][j] == '1':
-            homes.append([i, j])
-        if graph[i][j] == '2':
-            chickens.append([i, j])
-INF = int(1e9)
-result = INF
-for ch in combinations(chickens, m):
-    r = 0
-    for h in homes:
-        length = INF
-        for c in ch:
-            temp = abs(h[0]-c[0]) + abs(h[1] - c[1])
-            length = min(temp, length)
-        r += length
-    result = min(result, r)
-print(result)
+        if board[i][j] == 1:
+            homes.append((i, j))
+        elif board[i][j] == 2:
+            chickens.append((i, j))
 
+combs = combinations(chickens, m)
+for com in combs:
+    tmp_city_length = 0
+    for h in homes:
+        hx, hy = h
+        chick_length = MAX
+        for chic in com:
+            cx, cy = chic
+            chick_length = min(chick_length, abs(hx-cx) + abs(hy-cy))
+        tmp_city_length += chick_length
+    result = min(result, tmp_city_length)
+print(result)
