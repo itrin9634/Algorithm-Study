@@ -12,5 +12,5 @@ def solution(s):
         else:
             idx += 1
         answer += s[i]
-        
+
     return answer
