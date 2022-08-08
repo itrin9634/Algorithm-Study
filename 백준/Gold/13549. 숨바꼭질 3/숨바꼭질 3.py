@@ -13,10 +13,9 @@ while q:
         print(time)
         break
 
-    if 0 <= now * 2 < MAX and not visited[now * 2]:
-        q.append((now * 2, time))
-        
     if 0 <= now - 1 < MAX and not visited[now-1]:
         q.append((now - 1, time + 1))
     if 0 <= now +1 < MAX and not visited[now + 1]:
         q.append((now + 1, time + 1))
+    if 0 <= now * 2 < MAX and not visited[now * 2]:
+        q.appendleft((now*2, time))
