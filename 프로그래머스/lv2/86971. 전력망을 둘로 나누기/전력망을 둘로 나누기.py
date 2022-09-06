@@ -1,32 +1,34 @@
-from collections import Counter
+from collections import deque
 
-def find_parent(parent, a):
-    if parent[a] != a:
-        parent[a] = find_parent(parent, parent[a])
-    return parent[a]
-
-def union_parent(parent, a, b):
-    a = find_parent(parent, a)
-    b = find_parent(parent, b)
-    if a < b:
-        parent[b] = a
-    else:
-        parent[a] = b
+def bfs(start, graph, visited, wire, cnt):
+    q = deque()
+    q.append(start)
+    visited[start] = True
+    
+    while q:
+        now = q.popleft()
+        cnt += 1
+        for i in graph[now]:
+            if (now == wire[0] and i == wire[1]) or (now == wire[1] and i == wire[0]):
+                continue
+            if not visited[i]:
+                visited[i] = True
+                q.append(i)
+    return cnt
 
 def solution(n, wires):
     ans = n
-    for i in range(len(wires)):
-        tmp = wires[:i] + wires[i+1:]
-        parent = [i for i in range(n+1)]
-        for wire in tmp:
-            if find_parent(parent, wire[0]) == find_parent(parent, wire[1]):
-                continue
-            union_parent(parent, wire[0], wire[1])            
-        
-        uf = []
-        for i in range(1, n + 1):
-            uf.append(find_parent(parent, i))
-        uf = Counter(uf)
-        v = list(uf.values())
-        ans = min(ans, abs( v[0]- v[1]))
+    graph = [[] for _ in range(n+1)]
+    for w in wires:
+        graph[w[0]].append(w[1])
+        graph[w[1]].append(w[0])
+    
+    for wire in wires:
+        visited = [False] * (n+1)
+        temp = []
+        for i in range(1, n+1):
+            if not visited[i]:
+                cnt = bfs(i, graph, visited, wire, 0)
+                temp.append(cnt)
+        ans = min(ans, abs(temp[0] - temp[1]))    
     return ans
