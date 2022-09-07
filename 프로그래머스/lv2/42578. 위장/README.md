@@ -1,10 +1,10 @@
 # [level 2] 위장 - 42578 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42578?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42578) 
 
 ### 성능 요약
 
-메모리: 10.1 MB, 시간: 0.01 ms
+메모리: 10.2 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -64,11 +64,11 @@
 </tr>
 </thead>
         <tbody><tr>
-<td>[["yellow<u>hat", "headgear"], ["blue</u>sunglasses", "eyewear"], ["green_turban", "headgear"]]</td>
+<td>[["yellow_hat", "headgear"], ["blue_sunglasses", "eyewear"], ["green_turban", "headgear"]]</td>
 <td>5</td>
 </tr>
 <tr>
-<td>[["crow<u>mask", "face"], ["blue</u>sunglasses", "face"], ["smoky_makeup", "face"]]</td>
+<td>[["crow_mask", "face"], ["blue_sunglasses", "face"], ["smoky_makeup", "face"]]</td>
 <td>3</td>
 </tr>
 </tbody>
