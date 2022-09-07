@@ -10,21 +10,10 @@ def solution(survey, choices):
             dic[a] += abs(score - 4)
         else:
             dic[b] += abs(score - 4)
-            
-    if dic['R'] >= dic['T']:
-        answer += 'R'
-    else:
-        answer += 'T'
-    if dic['C'] >= dic['F']:
-        answer += 'C'
-    else:
-        answer += 'F'
-    if dic['J'] >= dic['M']:
-        answer += 'J'
-    else:
-        answer += 'M'
-    if dic['A'] >= dic['N']:
-        answer += 'A'
-    else:
-        answer += 'N'
+    arr = list(dic.items())
+    for i in range(1, len(arr), 2):
+        if arr[i-1][1] >= arr[i][1]:
+            answer += arr[i-1][0]
+        else:
+            answer += arr[i][0]
     return answer
