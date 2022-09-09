@@ -1,16 +1,16 @@
 def solution(s):
     answer = True
     
-    stack = []
+    cnt = 0
     for i in range(len(s)):
         if s[i] == '(':
-            stack.append(s[i])
-        elif stack:
-            stack.pop()
+            cnt += 1
         else:
+            cnt -= 1
+        if cnt < 0:
             answer = False
             break
-    if stack:
+    if cnt:
         answer = False
 
     return answer
