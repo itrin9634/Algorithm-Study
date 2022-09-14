@@ -8,18 +8,23 @@ def solution(operations):
             heapq.heappush(q, (-int(b), i))
             heapq.heappush(q1, (int(b), i))
         elif a == 'D' and int(b) == 1:
-            if q:
-                num, idx = heapq.heappop(q)
-                q1.remove((-num, idx))
+            heapq.heappop(q)
         elif a == 'D' and int(b) == -1:
-            if q1:
-                num, idx = heapq.heappop(q1)
-                q.remove((-num, idx))
-    if q1:
-        MAX = max(x[0] for x in q1)
-        MIN = min(x[0] for x in q1)
+            heapq.heappop(q1)
+    MAX = -int(1e9)
+    MIN = int(1e9)
+    print(q)
+    print(q1)
+    for i in range(len(q1)):
+        num, idx = q1[i]
+        if any(idx == x[1] for x in q):
+            print(idx)
+            MAX = max(MAX, num)
+            MIN = min(MIN, num)
+    print(MAX, MIN)
+    if (MAX != -int(1e9)) or (MIN != int(1e9)):
+        print('1111')
         return [MAX, MIN]
     else:
         return [0, 0]
-    
   
