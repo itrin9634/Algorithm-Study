@@ -1,8 +1,7 @@
 def solution(sizes):
     answer = 0
-    
-    ws = [max(size) for size in sizes]
-    hs = [min(size) for size in sizes]
-    answer = max(ws) * max(hs)
-    
+
+    arr1 = [min(v, i) for (i, v) in sizes]
+    arr2 = [max(i, v) for (i, v) in sizes]
+    answer = max(arr1) * max(arr2)
     return answer
