@@ -1,34 +1,40 @@
 from collections import deque
 
-def bfs(start, graph, visited, wire, cnt):
+def bfs(node, tree, visited, w):
+    cnt = 0
+    visited[node] = True
     q = deque()
-    q.append(start)
-    visited[start] = True
+    q.append(node)
     
     while q:
-        now = q.popleft()
+        node = q.popleft()
         cnt += 1
-        for i in graph[now]:
-            if (now == wire[0] and i == wire[1]) or (now == wire[1] and i == wire[0]):
+        for i in tree[node]:
+            if (node == w[0] and i == w[1]) or (i == w[0] and node == w[1]):
                 continue
             if not visited[i]:
                 visited[i] = True
                 q.append(i)
-    return cnt
+    return cnt   
+    
+
 
 def solution(n, wires):
-    ans = n
-    graph = [[] for _ in range(n+1)]
+    answer = int(1e9)
+    tree = [[] for _ in range(n+1)]
     for w in wires:
-        graph[w[0]].append(w[1])
-        graph[w[1]].append(w[0])
+        a, b = w
+        tree[a].append(b)
+        tree[b].append(a)
     
-    for wire in wires:
-        visited = [False] * (n+1)
+    for w in wires:
         temp = []
+        visited = [False] * (n+1)
         for i in range(1, n+1):
             if not visited[i]:
-                cnt = bfs(i, graph, visited, wire, 0)
+                cnt = bfs(i, tree, visited, w)
                 temp.append(cnt)
-        ans = min(ans, abs(temp[0] - temp[1]))    
-    return ans
+        answer = min(answer, abs(temp[0] - temp[1]))
+        
+    
+    return answer
