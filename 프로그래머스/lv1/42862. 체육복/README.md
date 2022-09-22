@@ -1,10 +1,10 @@
 # [level 1] 체육복 - 42862 
 
-[문제 링크](https://programmers.co.kr/learn/courses/30/lessons/42862) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/42862) 
 
 ### 성능 요약
 
-메모리: 10.4 MB, 시간: 0.01 ms
+메모리: 10.1 MB, 시간: 0.01 ms
 
 ### 구분
 
@@ -66,6 +66,10 @@
 
 <p>예제 #2<br>
 3번 학생이 2번 학생이나 4번 학생에게 체육복을 빌려주면 학생 4명이 체육수업을 들을 수 있습니다.</p>
+
+<h5>문제가 잘 안풀린다면😢</h5>
+
+<p>힌트가 필요한가요? [코딩테스트 연습 힌트 모음집]으로 오세요! → <a href="https://school.programmers.co.kr/learn/courses/14743?itm_content=lesson42862" target="_blank" rel="noopener">클릭</a></p>
 
 <p><a href="http://hsin.hr/coci/archive/2009_2010/contest6_tasks.pdf" target="_blank" rel="noopener">출처</a></p>
 
