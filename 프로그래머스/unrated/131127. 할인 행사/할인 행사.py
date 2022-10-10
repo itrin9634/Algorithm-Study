@@ -6,7 +6,7 @@ def solution(want, number, discount):
         tmp = Counter(discount[i: i + 10])
         isFind = True
         for j in range(len(want)):
-            if want[j] in tmp and tmp[want[j]] >= number[j]:
+            if want[j] in tmp and tmp[want[j]] == number[j]:
                 continue
             else:
                 isFind = False
