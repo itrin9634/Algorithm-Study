@@ -9,7 +9,6 @@ def solution(name, yearning, photo):
         total = 0
         for j in range(len(photo[i])):
             total += n_dict[photo[i][j]]
-            print(total)
         answer.append(total)
         
         
